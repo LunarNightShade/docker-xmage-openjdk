@@ -11,7 +11,7 @@ docker run -d -it \
 	--add-host example.com:0.0.0.0 \
 	-e "XMAGE_DOCKER_SERVER_ADDRESS=example.com" \
 	--restart unless-stopped \
-	nealmetcalf/docker-xmage:open-jdk
+	nealmetcalf/docker-xmage
 ```
 
 XMage needs to know the domain name the server is running on. The `--add-host` option adds an entry to the containers `/etc/hosts` file for this domain. Replace `example.com` with your server IP address or domain name address.  
@@ -38,8 +38,6 @@ You should always set `XMAGE_DOCKER_SERVER_ADDRESS` to the same value as your `-
 + XMAGE_DOCKER_MAX_PASSWORD_LENGTH="100"
 + XMAGE_DOCKER_MAILGUN_API_KEY="X"
 + XMAGE_DOCKER_MAILGUN_DOMAIN="X"
-
-Note: All variable values except the two Java memory values must be enclosed in double quotes (" ").
 
 ---
 
