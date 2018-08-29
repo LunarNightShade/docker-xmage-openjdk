@@ -1,5 +1,5 @@
 # Based on official OpenJDK Docker library image
-FROM openjdk:8u171-jre-alpine3.7
+FROM openjdk:8-jre-alpine
 
 # Build and config ENVs
 
