@@ -1,4 +1,4 @@
-#XMage Version: 1.4.37v4
+#XMage Version: 1.4.42v7
 # Based on official OpenJDK Docker library image
 FROM openjdk:8-jre-alpine
 
@@ -26,8 +26,9 @@ ENV JAVA_MIN_MEMORY=256M \
 
 #RUN based on anapsix/docker-alpine-java:8u172b11_server-jre
 RUN set -ex && \
-    apk -U upgrade && \
-    apk add libstdc++ curl ca-certificates bash jq && \
+    apk -U --no-cache upgrade && \
+    apk --no-cache add --virtual dl-deps curl jq && \
+    apk --no-cache add libstdc++ ca-certificates bash && \
     for pkg in glibc-${GLIBC_VERSION} glibc-bin-${GLIBC_VERSION} glibc-i18n-${GLIBC_VERSION}; do curl -sSL ${GLIBC_REPO}/releases/download/${GLIBC_VERSION}/${pkg}.apk -o /tmp/${pkg}.apk; done && \
     apk add --allow-untrusted /tmp/*.apk && \
     rm -v /tmp/*.apk && \

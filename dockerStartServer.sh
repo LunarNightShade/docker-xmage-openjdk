@@ -16,4 +16,4 @@ sed -i -e "s#\(maxPasswordLength=\)[\"].*[\"]#\1\"$XMAGE_DOCKER_MAX_PASSWORD_LEN
 sed -i -e "s#\(mailgunApiKey=\)[\"].*[\"]#\1\"$XMAGE_DOCKER_MAILGUN_API_KEY\"#g" ${XMAGE_CONFIG}
 sed -i -e "s#\(mailgunDomain=\)[\"].*[\"]#\1\"$XMAGE_DOCKER_MAILGUN_DOMAIN\"#g" ${XMAGE_CONFIG}
 
-java -Xms$JAVA_MIN_MEMORY -Xmx$JAVA_MAX_MEMORY -XX:MaxPermSize=256m -Djava.security.policy=./config/security.policy -Djava.util.logging.config.file=./config/logging.config -Dlog4j.configuration=file:./config/log4j.properties -jar ./lib/mage-server-*.jar -adminPassword=$XMAGE_DOCKER_ADMIN_PASSWORD
+java -Xms$JAVA_MIN_MEMORY -Xmx$JAVA_MAX_MEMORY -Djava.security.policy=./config/security.policy -Djava.util.logging.config.file=./config/logging.config -Dlog4j.configuration=file:./config/log4j.properties -jar ./lib/mage-server-*.jar -adminPassword=$XMAGE_DOCKER_ADMIN_PASSWORD
