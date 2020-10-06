@@ -1,17 +1,17 @@
-#XMage Version: 1.4.42v7
+#XMage Version: 1.4.45v1
 # Based on official OpenJDK Docker library image
 FROM openjdk:8-jre-alpine
 
 # Build and config ENVs
 
-ENV JAVA_MIN_MEMORY=256M \
-	JAVA_MAX_MEMORY=512M \
+ENV JAVA_MIN_MEMORY=1024M \
+	JAVA_MAX_MEMORY=1536M \
     GLIBC_VERSION=2.27-r0 \
 	GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc \
     LANG=C.UTF-8 \
     XMAGE_DOCKER_SERVER_ADDRESS="0.0.0.0" \
     XMAGE_DOCKER_PORT="17171" \
-    XMAGE_DOCKER_SEONDARY_BIND_PORT="17179" \
+    XMAGE_DOCKER_SECONDARY_BIND_PORT="17179" \
     XMAGE_DOCKER_MAX_SECONDS_IDLE="600" \
     XMAGE_DOCKER_AUTHENTICATION_ACTIVATED="false" \
     XMAGE_DOCKER_SERVER_NAME="mage-server" \
